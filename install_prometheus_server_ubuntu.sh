@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PROMETHEUS_VERSION=$(curl -s https://api.github.com/repos/prometheus/prometheus/releases/latest | awk -F'"' '/tag_name/ {print $4}')
+PROMETHEUS_VERSION=${PROMETHEUS_VERSION#v}
 PROMETHEUS_FOLDER_CONFIG="/etc/prometheus"
 PROMETHEUS_FOLDER_TSDATA="/etc/prometheus/data"
 
